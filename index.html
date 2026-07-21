@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#23342c">
-  <meta name="description" content="A personalised four-day Scottish driving road book for two friends: East London, Rockhill Guest House in Moffat, Glencoe, Lodge on the Loch at Onich, Loch Tay, Edinburgh and Wetherby.">
+  <meta name="description" content="A personalised four-day Scottish driving road book for two friends: East London, Rockhill Guest House in Moffat, Glencoe Mountain Resort, Glen Etive, Lodge on the Loch at Onich, Loch Tay, Edinburgh and Wetherby.">
   <meta property="og:title" content="Two Bros Highland Run">
   <meta property="og:description" content="The final driving plan: Highlands, photography, a signature Friday road and a safe night-rest strategy.">
   <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/e/eb/Loch_Linnhe_South_of_Onich_-_geograph.org.uk_-_6143511.jpg">
@@ -537,6 +537,109 @@
       .day-cover { min-height: 390px; }
     }
 
+
+    .activity-feature {
+      margin: 28px 0;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: var(--trip-road);
+      color: #f4f7f4;
+      box-shadow: var(--elevation-2);
+    }
+    .activity-feature__media {
+      min-height: 380px;
+      position: relative;
+      display: flex;
+      align-items: end;
+      isolation: isolate;
+    }
+    .activity-feature__media img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+    }
+    .activity-feature__media::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(180deg, rgba(7,16,12,.06), rgba(7,16,12,.94) 95%);
+    }
+    .activity-feature__intro {
+      width: 100%;
+      padding: clamp(24px, 5vw, 48px);
+    }
+    .activity-feature__intro h3 {
+      font-family: var(--display-font);
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      letter-spacing: -.035em;
+      margin: 8px 0 10px;
+    }
+    .activity-feature__intro p { max-width: 780px; color: #dce7e1; }
+    .activity-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 14px;
+      padding: 0 clamp(20px, 4vw, 38px) clamp(20px, 4vw, 38px);
+    }
+    .activity-card {
+      border-radius: var(--radius-md);
+      padding: 20px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.14);
+      backdrop-filter: blur(10px);
+    }
+    .activity-card--recommended {
+      background: var(--md-sys-color-primary-container);
+      color: var(--md-sys-color-on-primary-container);
+      border-color: transparent;
+    }
+    .activity-card__tag {
+      display: inline-flex;
+      min-height: 26px;
+      align-items: center;
+      padding: 0 9px;
+      border-radius: 999px;
+      font-size: .7rem;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      background: rgba(255,255,255,.12);
+    }
+    .activity-card--recommended .activity-card__tag {
+      background: color-mix(in srgb, var(--md-sys-color-primary) 15%, transparent);
+    }
+    .activity-card h4 { font-size: 1.08rem; margin: 12px 0 6px; }
+    .activity-card p { font-size: .87rem; margin-bottom: 0; color: inherit; opacity: .92; }
+    .activity-facts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+    .activity-fact {
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.12);
+      font-size: .76rem;
+      font-weight: 760;
+    }
+    .activity-card--recommended .activity-fact {
+      background: color-mix(in srgb, var(--md-sys-color-primary) 10%, transparent);
+      border-color: color-mix(in srgb, var(--md-sys-color-primary) 20%, transparent);
+    }
+    .activity-feature .button-row {
+      padding: 0 clamp(20px, 4vw, 38px) clamp(24px, 4vw, 38px);
+    }
+    @media (max-width: 760px) {
+      .activity-grid { grid-template-columns: 1fr; }
+      .activity-feature__media { min-height: 430px; }
+    }
+
     @media print {
       .topbar, .sticky-actions, .hero__actions, .button-row, .segmented { display: none !important; }
       .hero { min-height: 520px; }
@@ -688,8 +791,8 @@
             <div class="card__media"><img src="assets/images/glen-etive.webp" alt="Glen Etive road through the mountains" loading="lazy"></div>
             <div class="card__body">
               <span class="eyebrow">Thursday · cinema day</span>
-              <h3>Rockhill → Glen Etive → Lodge on the Loch</h3>
-              <p class="muted">Leave around 07:15 if Rockhill can arrange an early breakfast. Loch Lomond, Rannoch Moor, Glen Etive and Glencoe, then finish directly at Lodge on the Loch on the A82 at Onich.</p>
+              <h3>Rockhill → Mountain Resort → Lodge on the Loch</h3>
+              <p class="muted">Leave around 07:15 if Rockhill can arrange an early breakfast. Loch Lomond and Rannoch Moor lead into a chairlift stop at Glencoe Mountain Resort, followed by a shortened Glen Etive and Glencoe photo run before Lodge on the Loch.</p>
               <div class="button-row">
                 <a class="button button--filled" href="#thursday"><svg class="icon"><use href="#i-route"/></svg>Full Thursday</a>
               </div>
@@ -769,6 +872,77 @@
                 </tbody>
               </table>
 
+
+              <article class="activity-feature" id="glencoe-activities">
+                <div class="activity-feature__media">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Chairlift_at_Glencoe_Mountain_Resort_-_geograph.org.uk_-_4922575.jpg/1280px-Chairlift_at_Glencoe_Mountain_Resort_-_geograph.org.uk_-_4922575.jpg"
+                       onerror="this.src='assets/images/buachaille.webp'"
+                       alt="Chairlift at Glencoe Mountain Resort">
+                  <div class="activity-feature__intro">
+                    <span class="eyebrow" style="color:#f0c982">Adventure menu · choose one main level</span>
+                    <h3>More than a photo stop.</h3>
+                    <p>The chairlift is the default because it fits the route. Tubing is the fun add-on. The bigger adventures below are genuine itinerary replacements—not extras to stack onto an already full day.</p>
+                    <div class="activity-facts">
+                      <span class="activity-fact">Resort open from 09:00</span>
+                      <span class="activity-fact">Weather-dependent uplift</span>
+                      <span class="activity-fact">On-route before Glen Etive</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="activity-grid">
+                  <section class="activity-card activity-card--recommended">
+                    <span class="activity-card__tag">Recommended</span>
+                    <h4>Chairlift + plateau photos</h4>
+                    <p>Best balance of experience and schedule. Budget about 75–90 minutes including the return ride, views and a quick café stop. Current summer adult return price: £20.</p>
+                    <div class="activity-facts"><span class="activity-fact">Low exertion</span><span class="activity-fact">Great photography</span></div>
+                  </section>
+
+                  <section class="activity-card">
+                    <span class="activity-card__tag">Fun add-on</span>
+                    <h4>Summer tubing</h4>
+                    <p>A 30-minute session costs £10 per person. Add it after the chairlift, but shorten Glen Etive to a focused viewpoint run.</p>
+                    <div class="activity-facts"><span class="activity-fact">30 minutes</span><span class="activity-fact">Book/check availability</span></div>
+                  </section>
+
+                  <section class="activity-card">
+                    <span class="activity-card__tag">Adrenaline replacement</span>
+                    <h4>Canyoning at Inchree Falls</h4>
+                    <p>Vertical Descents operates from Inchree, very close to Lodge on the Loch. This is the proper wet-and-wild option, but allow a half-day and pre-book; it replaces the resort and most of Glen Etive.</p>
+                    <div class="activity-facts"><span class="activity-fact">Near Onich</span><span class="activity-fact">Half-day</span><span class="activity-fact">Pre-book</span></div>
+                  </section>
+
+                  <section class="activity-card">
+                    <span class="activity-card__tag">Friday alternative</span>
+                    <h4>Nevis Range gondola</h4>
+                    <p>An enclosed 15-minute gondola climbs to 650m, with 40- and 60-minute viewpoint walks. Adult 2026 day ticket: £28.95. It sends you north of Fort William, so it replaces Loch Tay/Glen Quaich rather than joining that route.</p>
+                    <div class="activity-facts"><span class="activity-fact">Better in bad wind/chill</span><span class="activity-fact">2–3 hour visit</span></div>
+                  </section>
+
+                  <section class="activity-card">
+                    <span class="activity-card__tag">Easy backup</span>
+                    <h4>Disc golf at the resort</h4>
+                    <p>A low-commitment backup if the lift is suspended. Current price is £6 per adult. Keep a firm 60-minute cap so you still reach Onich comfortably.</p>
+                    <div class="activity-facts"><span class="activity-fact">£6</span><span class="activity-fact">Weather-flex</span></div>
+                  </section>
+
+                  <section class="activity-card">
+                    <span class="activity-card__tag">Near the hotel</span>
+                    <h4>Inchree Falls walk</h4>
+                    <p>A waymarked waterfall and woodland route near Onich. Allow roughly 1½–2½ hours. Use it on Thursday evening only if you arrive early, or as a calmer Friday replacement.</p>
+                    <div class="activity-facts"><span class="activity-fact">5 km</span><span class="activity-fact">Waterfall photos</span></div>
+                  </section>
+                </div>
+
+                <div class="button-row">
+                  <a class="button button--whisky" target="_blank" rel="noopener" href="https://www.glencoemountain.co.uk/summer/">Glencoe resort status</a>
+                  <a class="button button--glass" target="_blank" rel="noopener" href="https://www.glencoemountain.co.uk/prices/">Prices</a>
+                  <a class="button button--glass" target="_blank" rel="noopener" href="https://www.verticaldescents.com/">Canyoning enquiry</a>
+                  <a class="button button--glass" target="_blank" rel="noopener" href="https://www.nevisrange.co.uk/mountain-report/">Nevis Range status</a>
+                </div>
+              </article>
+
+
               <div class="day-image-strip">
                 <figure><img src="assets/images/moffat.webp" alt="Moffat town centre"><figcaption>Rockhill Guest House base · five minutes from Moffat centre</figcaption></figure>
                 <figure><img src="assets/images/devils-beef-tub.webp" alt="Devil's Beef Tub"><figcaption>The optional final photo stop</figcaption></figure>
@@ -815,12 +989,12 @@
             <img src="assets/images/glen-etive.webp" alt="Road through Glen Etive">
             <div class="day-cover__content">
               <span class="day-number">Day 2 · Thursday 23 July</span>
-              <h2>Rockhill → Glencoe → Lodge on the Loch</h2>
-              <p>The main Highland day: Loch Lomond, Tyndrum, Rannoch Moor, Buachaille Etive Mòr, Glen Etive and the Three Sisters, finishing on the shore of Loch Linnhe at your confirmed Onich hotel.</p>
+              <h2>Rockhill → Mountain Resort → Lodge on the Loch</h2>
+              <p>The main Highland day now combines the road trip with a real mountain experience: Loch Lomond, Rannoch Moor, Glencoe Mountain Resort, then a flexible Glen Etive and Glencoe run before your confirmed Onich hotel.</p>
               <div class="day-kpis">
                 <span class="day-kpi">Leave 07:00–07:30</span>
-                <span class="day-kpi">Full-day route</span>
-                <span class="day-kpi">Glen Etive optional full run</span>
+                <span class="day-kpi">Chairlift target ≈12:00</span>
+                <span class="day-kpi">Glen Etive shortened</span>
                 <span class="day-kpi">Lodge on the Loch · Onich</span>
               </div>
             </div>
@@ -830,15 +1004,16 @@
               <span class="eyebrow">Driving sequence</span>
               <h3>The cinematic day, without rushing it.</h3>
               <table class="time-table">
-                <thead><tr><th>Time</th><th>Plan</th><th>Photo discipline</th></tr></thead>
+                <thead><tr><th>Time</th><th>Plan</th><th>Decision rule</th></tr></thead>
                 <tbody>
-                  <tr><td>07:15 preferred</td><td>Leave Rockhill via M74, Glasgow’s western side and A82.</td><td>Arrange early breakfast; if you eat at the normal 08:00 service, leave around 08:45 and shorten Glen Etive.</td></tr>
-                  <tr><td>09:15–10:00</td><td>Short Loch Lomond coffee stop around Luss/Tarbet if parking is easy.</td><td>One shoreline frame, then move.</td></tr>
-                  <tr><td>11:00–11:30</td><td>Tyndrum / Green Welly fuel and facilities.</td><td>Top up before the slower Highland section.</td></tr>
-                  <tr><td>12:00–13:00</td><td>Rannoch Moor and Buachaille Etive Mòr lay-bys.</td><td>Use designated lay-bys only.</td></tr>
-                  <tr><td>12:30–14:30</td><td>Glen Etive out-and-back.</td><td>This is forecast to be the brighter/drier part of the day. Turn early if mist closes in or the schedule slips.</td></tr>
-                  <tr><td>15:15–16:30</td><td>Three Sisters, Glencoe village and a late lunch/coffee.</td><td>Cloud and drizzle can improve the photographs.</td></tr>
-                  <tr><td>16:30–18:15</td><td>Glencoe village → Ballachulish Bridge → Lodge on the Loch, Onich.</td><td>Stay on the A82. Aim to arrive before evening rain and before the Ballachulish works begin at 19:00.</td></tr>
+                  <tr><td>07:15 preferred</td><td>Leave Rockhill via M74, Glasgow’s western side and A82.</td><td>Arrange early breakfast. A normal 08:00 breakfast means using the shortest Glen Etive edit.</td></tr>
+                  <tr><td>09:25–09:50</td><td>Quick Loch Lomond coffee/photo stop if parking is easy.</td><td>One shoreline frame, then move.</td></tr>
+                  <tr><td>10:50–11:15</td><td>Tyndrum / Green Welly fuel and facilities.</td><td>Top up before Rannoch Moor.</td></tr>
+                  <tr><td>11:45–13:15</td><td>Glencoe Mountain Resort: chairlift return, plateau photos and café.</td><td>Check the live lift status that morning; operations are weather-dependent.</td></tr>
+                  <tr><td>13:15–13:50</td><td>Optional 30-minute tubing session.</td><td>Adding tubing means a shorter Glen Etive run.</td></tr>
+                  <tr><td>14:05–15:35</td><td>Buachaille viewpoint and Glen Etive partial out-and-back.</td><td>Use a strict turnaround time; do not force the full road to Loch Etive.</td></tr>
+                  <tr><td>15:50–17:00</td><td>Three Sisters and one Glencoe village stop.</td><td>Cloud and drizzle can improve the photographs.</td></tr>
+                  <tr><td>17:00–18:00</td><td>Glencoe → Ballachulish Bridge → Lodge on the Loch, Onich.</td><td>Aim to arrive before evening rain and before the Ballachulish works begin at 19:00.</td></tr>
                 </tbody>
               </table>
 
@@ -853,11 +1028,11 @@
               </div>
               <div class="route-note route-note--warning">
                 <strong>Bad-weather edit.</strong>
-                Shorten the complete Glen Etive run, keep one or two Glencoe viewpoints and reach Lodge on the Loch earlier. Fort William is now unnecessary.
+                If the chairlift is suspended, use disc golf/café or move straight to Glen Etive. If you add tubing, shorten Glen Etive. Do not try to combine canyoning, the resort and the full scenic drive.
               </div>
 
               <div class="button-row">
-                <a class="button button--filled" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/Rockhill+Guest+House,+Moffat/Luss,+UK/Tyndrum,+UK/Glen+Etive/Three+Sisters+Viewpoint/Lodge+on+the+Loch,+Onich,+PH33+6RY"><svg class="icon"><use href="#i-map"/></svg>Open full Thursday route</a>
+                <a class="button button--filled" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/Rockhill+Guest+House,+Moffat/Luss,+UK/Tyndrum,+UK/Glencoe+Mountain+Resort/Glen+Etive/Three+Sisters+Viewpoint/Lodge+on+the+Loch,+Onich,+PH33+6RY"><svg class="icon"><use href="#i-map"/></svg>Open full Thursday route</a>
                 <a class="button button--tonal" target="_blank" rel="noopener" href="https://www.traffic.gov.scot/traffic-information/planned-roadworks">Live A82 roadworks</a>
                 <a class="button button--text" target="_blank" rel="noopener" href="https://lodgeontheloch.com/">Lodge on the Loch</a>
               </div>
@@ -867,6 +1042,11 @@
                 <span class="eyebrow">Confirmed choice</span>
                 <h3>Lodge on the Loch</h3>
                 <p class="muted">Onich, Fort William PH33 6RY. Beachfront on Loch Linnhe, free parking reported, and a 15:00–22:00 check-in window. Phone: <a href="tel:+441855818098">01855 818098</a>.</p>
+              </section>
+              <section class="mini-card">
+                <span class="eyebrow">Thursday booking</span>
+                <h3>Chairlift first</h3>
+                <p class="muted">The lift is weather-dependent. Check the resort’s live status after breakfast. Tubing is the only add-on that still fits the complete day.</p>
               </section>
               <section class="mini-card">
                 <span class="eyebrow">Hotel strategy</span>
@@ -1147,11 +1327,11 @@
 
   <footer>
     <div class="shell">
-      <span class="eyebrow" style="color:#f0c982">Final road book · v4 · confirmed hotels and car</span>
+      <span class="eyebrow" style="color:#f0c982">Final road book · v5 · mountain activities · confirmed hotels and car</span>
       <h2 style="color:white;max-width:850px">Built for two mates: four complete days, one signature road and no missing chapters.</h2>
       <p>Interface inspired by Material 3’s token and component approach, re-themed in Highland moss, stone, mist and whisky. It is not affiliated with Google or Top Gear.</p>
       <p class="micro">
-        Photo credits: Glen Etive — Dowfs, CC BY 4.0; Loch Linnhe south of Onich — Peter Mackenzie, CC BY-SA 2.0; Edinburgh — Glynn Jones, CC BY-SA 3.0; Moffat — Walter Baxter, CC BY-SA 2.0; Devil’s Beef Tub — David Neale, CC BY-SA 2.0; Buachaille Etive Mòr — Spike, Creative Commons; Wetherby — Mtaylor848, CC BY-SA 3.0/GFDL; Falls of Dochart — Simon Burchell, CC BY-SA 4.0; Ben Lawers from Loch Tay and Forth Bridge — Kim Traynor, CC BY-SA 4.0; Glen Quaich panorama — Ronnie Fleming, CC BY 2.0. Images retain their original licences.
+        Photo credits: Glen Etive — Dowfs, CC BY 4.0; Loch Linnhe south of Onich — Peter Mackenzie, CC BY-SA 2.0; Edinburgh — Glynn Jones, CC BY-SA 3.0; Moffat — Walter Baxter, CC BY-SA 2.0; Devil’s Beef Tub — David Neale, CC BY-SA 2.0; Buachaille Etive Mòr — Spike, Creative Commons; Wetherby — Mtaylor848, CC BY-SA 3.0/GFDL; Glencoe Mountain Resort chairlift — Richard Cooke, CC BY-SA 2.0; Falls of Dochart — Simon Burchell, CC BY-SA 4.0; Ben Lawers from Loch Tay and Forth Bridge — Kim Traynor, CC BY-SA 4.0; Glen Quaich panorama — Ronnie Fleming, CC BY 2.0. Images retain their original licences.
       </p>
     </div>
   </footer>
