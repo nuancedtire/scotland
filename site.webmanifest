@@ -1,0 +1,9 @@
+{
+  "name": "Two Bros Highland Run",
+  "short_name": "Highland Run",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f8f6ef",
+  "theme_color": "#23342c",
+  "icons": []
+}

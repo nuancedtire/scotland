@@ -1,15 +1,24 @@
-# Highlands Night Run Road Book
+# Two Bros Highland Run
 
-A self-contained GitHub Pages site for the East London → Moffat → Kinlochleven → Edinburgh → Wetherby Highlands road trip.
+A GitHub Pages-ready static road book.
 
-## Publish with GitHub Pages
+## Publish
 
-1. Create a new **public** GitHub repository.
-2. Upload `index.html`, `.nojekyll`, and this `README.md` to the repository root.
-3. Open **Settings → Pages**.
-4. Under **Build and deployment**, choose **Deploy from a branch**.
-5. Select the `main` branch and `/ (root)`, then save.
+1. Replace the contents of your existing GitHub Pages repository with these files.
+2. Keep GitHub Pages set to deploy from `main` and `/ (root)`.
+3. Commit and push.
+4. Hard-refresh the live page after deployment.
 
-The site will be published at:
+## Files
 
-`https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/`
+- `index.html` — final interactive road book
+- `assets/images/` — optimised local WebP photographs
+- `assets/favicon.svg`
+- `site.webmanifest`
+- `.nojekyll`
+
+The Friday signature route is:
+
+Kinlochleven → Glencoe → Rannoch Moor → Tyndrum → Killin → Loch Tay → Kenmore → Glen Quaich → Sma’ Glen → Crieff → South Queensferry → Edinburgh.
+
+External Wikimedia images are loaded at runtime and credited in the footer.
