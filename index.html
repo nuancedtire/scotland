@@ -365,6 +365,178 @@
     footer .shell { padding-inline: 0; }
     footer a { color: #f0c982; }
 
+
+    /* Complete daily itinerary chapters */
+    .day-chapter {
+      scroll-margin-top: 92px;
+      border-radius: var(--radius-xl);
+      overflow: clip;
+      background: var(--md-sys-color-surface-container-lowest);
+      box-shadow: var(--elevation-2);
+    }
+    .day-chapter + .day-chapter { margin-top: 34px; }
+    .day-cover {
+      min-height: 430px;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      color: white;
+      isolation: isolate;
+      overflow: hidden;
+    }
+    .day-cover > img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+    }
+    .day-cover::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(180deg, rgba(8,18,14,.04), rgba(8,18,14,.9) 94%);
+    }
+    .day-cover__content { width: 100%; padding: clamp(26px, 5vw, 54px); }
+    .day-number {
+      display: inline-flex;
+      align-items: center;
+      min-height: 36px;
+      padding: 0 14px;
+      border-radius: 999px;
+      background: var(--trip-whisky);
+      color: #241704;
+      font-size: .8rem;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .day-cover h2 { color: white; margin-bottom: 10px; max-width: 900px; }
+    .day-cover p { max-width: 820px; color: #eef3ef; font-size: 1.03rem; }
+    .day-kpis { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+    .day-kpi {
+      display: inline-flex;
+      gap: 7px;
+      align-items: center;
+      border: 1px solid rgba(255,255,255,.2);
+      background: rgba(255,255,255,.1);
+      backdrop-filter: blur(10px);
+      padding: 8px 11px;
+      border-radius: 999px;
+      font-size: .8rem;
+      font-weight: 760;
+    }
+    .day-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(270px, .65fr);
+      gap: 26px;
+      padding: clamp(24px, 5vw, 52px);
+    }
+    .day-main { min-width: 0; }
+    .day-sidebar { display: grid; align-content: start; gap: 16px; }
+    .mini-card {
+      padding: 20px;
+      border-radius: var(--radius-md);
+      background: var(--md-sys-color-surface-container-low);
+      border: 1px solid var(--md-sys-color-outline-variant);
+    }
+    .mini-card h3 { margin-bottom: 10px; }
+    .mini-card ul { padding-left: 20px; margin: 8px 0 0; }
+    .mini-card li { margin: 7px 0; }
+    .time-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    .time-table th,
+    .time-table td {
+      padding: 13px 10px;
+      border-bottom: 1px solid var(--md-sys-color-outline-variant);
+      text-align: left;
+      vertical-align: top;
+    }
+    .time-table th {
+      color: var(--md-sys-color-on-surface-variant);
+      font-size: .74rem;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+    .time-table td:first-child {
+      white-space: nowrap;
+      color: var(--md-sys-color-tertiary);
+      font-weight: 850;
+    }
+    .day-image-strip {
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 14px;
+      margin: 24px 0;
+    }
+    .day-image-strip figure {
+      margin: 0;
+      position: relative;
+      min-height: 250px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: var(--md-sys-color-surface-container);
+    }
+    .day-image-strip img { width: 100%; height: 100%; object-fit: cover; }
+    .day-image-strip figcaption {
+      position: absolute;
+      inset: auto 0 0;
+      color: white;
+      padding: 38px 16px 14px;
+      background: linear-gradient(transparent, rgba(0,0,0,.8));
+      font-size: .84rem;
+      font-weight: 800;
+    }
+    .route-note {
+      margin: 22px 0;
+      padding: 18px 20px;
+      border-radius: var(--radius-md);
+      background: var(--md-sys-color-primary-container);
+      color: var(--md-sys-color-on-primary-container);
+    }
+    .route-note strong { display: block; margin-bottom: 5px; }
+    .route-note--whisky {
+      background: var(--md-sys-color-tertiary-container);
+      color: var(--md-sys-color-on-tertiary-container);
+    }
+    .route-note--warning {
+      background: var(--md-sys-color-error-container);
+      color: #410002;
+    }
+    .day-jump {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 10px;
+      margin-top: 24px;
+    }
+    .day-jump a {
+      display: grid;
+      gap: 3px;
+      min-height: 82px;
+      padding: 16px;
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      background: var(--md-sys-color-surface-container-low);
+      border: 1px solid var(--md-sys-color-outline-variant);
+    }
+    .day-jump strong { color: var(--md-sys-color-primary); }
+    .day-jump span { color: var(--md-sys-color-on-surface-variant); font-size: .82rem; }
+    @media (max-width: 860px) {
+      .day-layout { grid-template-columns: 1fr; }
+      .day-image-strip { grid-template-columns: 1fr; }
+      .day-jump { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    }
+    @media (max-width: 520px) {
+      .day-jump { grid-template-columns: 1fr; }
+      .time-table th:nth-child(3), .time-table td:nth-child(3) { display: none; }
+      .day-cover { min-height: 390px; }
+    }
+
     @media print {
       .topbar, .sticky-actions, .hero__actions, .button-row, .segmented { display: none !important; }
       .hero { min-height: 520px; }
@@ -394,8 +566,10 @@
         <span class="brand__text">Two Bros Highland Run</span>
       </a>
       <nav class="topbar__nav" aria-label="Main navigation">
-        <a class="nav-link" href="#plan">Plan</a>
-        <a class="nav-link" href="#friday">Friday drive</a>
+        <a class="nav-link" href="#wednesday">Wed</a>
+        <a class="nav-link" href="#thursday">Thu</a>
+        <a class="nav-link" href="#friday">Fri</a>
+        <a class="nav-link" href="#saturday">Sat</a>
         <a class="nav-link" href="#prep">Prep</a>
         <button class="icon-button" id="themeToggle" aria-label="Toggle dark mode"><svg class="icon"><use href="#i-dark"/></svg></button>
       </nav>
@@ -414,7 +588,7 @@
       <div class="hero__content">
         <span class="eyebrow">22–25 July 2026 · East London start</span>
         <h1>Two Bros.<br>One Highland Run.</h1>
-        <p class="hero__copy">A final road book built around scenic driving, photography, one sensible whisky night, a properly memorable Friday morning and enough rest to get home safely.</p>
+        <p class="hero__copy">A complete four-day road book: the London run-up, the full Glencoe and Glen Etive day, Friday’s scenic cross-country drive to Edinburgh, and the planned overnight rest before Saturday’s return.</p>
         <div class="hero__chips">
           <span class="chip">Moffat night one</span>
           <span class="chip">Kinlochleven night two</span>
@@ -423,8 +597,8 @@
           <span class="chip">Wetherby planned rest</span>
         </div>
         <div class="hero__actions">
-          <a class="button button--whisky" href="#friday"><svg class="icon"><use href="#i-route"/></svg>See the signature drive</a>
-          <a class="button button--glass" href="#plan"><svg class="icon"><use href="#i-map"/></svg>Full itinerary</a>
+          <a class="button button--whisky" href="#wednesday"><svg class="icon"><use href="#i-route"/></svg>Start the full itinerary</a>
+          <a class="button button--glass" href="#friday"><svg class="icon"><use href="#i-map"/></svg>See Friday’s feature road</a>
         </div>
       </div>
     </section>
@@ -485,7 +659,7 @@
               <h3>East London → Moffat</h3>
               <p class="muted">Collect 08:00–08:30, photograph the rental, leave around 09:00. M11 → A14 → M6, Tebay lunch, Devil’s Beef Tub only if energy and daylight still work.</p>
               <div class="button-row">
-                <a class="button button--filled" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/East+London,+London/Tebay+Services+Northbound/Devil's+Beef+Tub/Moffat,+UK"><svg class="icon"><use href="#i-map"/></svg>Open route</a>
+                <a class="button button--filled" href="#wednesday"><svg class="icon"><use href="#i-route"/></svg>Full Wednesday</a>
               </div>
             </div>
           </article>
@@ -497,7 +671,7 @@
               <h3>Moffat → Glen Etive → Kinlochleven</h3>
               <p class="muted">Leave 07:00–07:30. Loch Lomond, Rannoch Moor, Glen Etive, Three Sisters and the B863 round Loch Leven. Kinlochleven is the scenic hotel choice; Fort William remains the practical fallback.</p>
               <div class="button-row">
-                <a class="button button--filled" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/Moffat,+UK/Luss,+UK/Tyndrum,+UK/Glen+Etive/Three+Sisters+Viewpoint/Kinlochleven,+UK"><svg class="icon"><use href="#i-map"/></svg>Open route</a>
+                <a class="button button--filled" href="#thursday"><svg class="icon"><use href="#i-route"/></svg>Full Thursday</a>
               </div>
             </div>
           </article>
@@ -521,13 +695,172 @@
               <h3>Edinburgh → Wetherby → East London</h3>
               <p class="muted">Leave Edinburgh around 18:30–19:00. A720 → A1/A1(M), paid rest at Wetherby for roughly 5–6 hours, then continue only when genuinely alert.</p>
               <div class="button-row">
-                <a class="button button--filled" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/Edinburgh,+UK/Wetherby+Services,+A1(M)/East+London,+London"><svg class="icon"><use href="#i-map"/></svg>Open night route</a>
+                <a class="button button--filled" href="#saturday"><svg class="icon"><use href="#i-route"/></svg>Full return plan</a>
               </div>
             </div>
           </article>
         </div>
       </div>
     </section>
+
+
+    <section class="section" aria-labelledby="full-itinerary-title">
+      <div class="shell">
+        <span class="eyebrow">The complete road book</span>
+        <h2 id="full-itinerary-title">Every day, properly planned.</h2>
+        <p class="lede">The overview above is the dashboard. These are the actual chapters you use on the road.</p>
+
+        <div class="day-jump" aria-label="Jump to a day">
+          <a href="#wednesday"><strong>Wednesday</strong><span>London → Moffat</span></a>
+          <a href="#thursday"><strong>Thursday</strong><span>Glencoe → Kinlochleven</span></a>
+          <a href="#friday"><strong>Friday</strong><span>Loch Tay → Edinburgh</span></a>
+          <a href="#saturday"><strong>Saturday</strong><span>Wetherby → London</span></a>
+        </div>
+
+        <article class="day-chapter" id="wednesday" style="margin-top:28px">
+          <header class="day-cover">
+            <img src="assets/images/devils-beef-tub.webp" alt="Devil's Beef Tub near Moffat">
+            <div class="day-cover__content">
+              <span class="day-number">Day 1 · Wednesday 22 July</span>
+              <h2>East London → Moffat</h2>
+              <p>The objective is simple: collect the right car, escape London cleanly and arrive in Scotland with enough energy left for dinner—not to prove you can drive to Glencoe in one hit.</p>
+              <div class="day-kpis">
+                <span class="day-kpi">Pickup 08:00–08:30</span>
+                <span class="day-kpi">Leave by ≈09:00</span>
+                <span class="day-kpi">≈350–380 miles</span>
+                <span class="day-kpi">Moffat night</span>
+              </div>
+            </div>
+          </header>
+          <div class="day-layout">
+            <div class="day-main">
+              <span class="eyebrow">Driving sequence</span>
+              <h3>Motorway first, scenery last.</h3>
+              <table class="time-table">
+                <thead><tr><th>Time</th><th>Plan</th><th>Why</th></tr></thead>
+                <tbody>
+                  <tr><td>08:00–09:00</td><td>Collect the rental, add both drivers, photograph every panel/wheel and confirm Saturday key-drop.</td><td>Do not discover mileage or damage issues after 1,000 miles.</td></tr>
+                  <tr><td>≈09:00</td><td>East London → M11 → A14 → M6.</td><td>Avoids dragging the trip through central London.</td></tr>
+                  <tr><td>11:00–11:20</td><td>First short driver change and coffee.</td><td>Swap before fatigue appears.</td></tr>
+                  <tr><td>13:45–14:30</td><td>Tebay Services: lunch, walk and fuel check.</td><td>The one motorway stop worth making part of the trip.</td></tr>
+                  <tr><td>17:00 onward</td><td>Devil’s Beef Tub only if timing, visibility and energy are good.</td><td>A scenic opening frame, but completely optional.</td></tr>
+                  <tr><td>18:00–19:00</td><td>Check in at Moffat, park for the night and eat.</td><td>Once parked, the driving day is finished.</td></tr>
+                </tbody>
+              </table>
+
+              <div class="day-image-strip">
+                <figure><img src="assets/images/moffat.webp" alt="Moffat town centre"><figcaption>Moffat — the strategic first night</figcaption></figure>
+                <figure><img src="assets/images/devils-beef-tub.webp" alt="Devil's Beef Tub"><figcaption>The optional final photo stop</figcaption></figure>
+              </div>
+
+              <div class="route-note route-note--whisky">
+                <strong>The only sensible whisky evening.</strong>
+                Once the car is parked at the hotel, have a relaxed dram with dinner if you wish. Keep it modest and allow a full night before Thursday’s early departure.
+              </div>
+
+              <div class="button-row">
+                <a class="button button--filled" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/East+London,+London/Tebay+Services+Northbound/Moffat,+UK"><svg class="icon"><use href="#i-map"/></svg>Direct route to Moffat</a>
+                <a class="button button--tonal" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/Tebay+Services+Northbound/Devil's+Beef+Tub/Moffat,+UK">Scenic final leg</a>
+              </div>
+            </div>
+            <aside class="day-sidebar">
+              <section class="mini-card">
+                <span class="eyebrow">Stay</span>
+                <h3>Moffat town centre</h3>
+                <p class="muted">Choose parking, breakfast from 06:30/07:00 and flexible late check-in over luxury extras.</p>
+              </section>
+              <section class="mini-card">
+                <span class="eyebrow">Car setup</span>
+                <h3>Large estate wins</h3>
+                <ul>
+                  <li>BMW 3 Series Touring</li>
+                  <li>Volvo V60</li>
+                  <li>Audi A4 Avant</li>
+                  <li>Škoda Superb Estate</li>
+                </ul>
+              </section>
+              <section class="mini-card">
+                <span class="eyebrow">If delayed</span>
+                <h3>Cut the viewpoint</h3>
+                <p class="muted">Skip Devil’s Beef Tub and go directly to the hotel. Do not steal sleep from Thursday to rescue Wednesday.</p>
+              </section>
+            </aside>
+          </div>
+        </article>
+
+        <article class="day-chapter" id="thursday">
+          <header class="day-cover">
+            <img src="assets/images/glen-etive.webp" alt="Road through Glen Etive">
+            <div class="day-cover__content">
+              <span class="day-number">Day 2 · Thursday 23 July</span>
+              <h2>Moffat → Glencoe → Kinlochleven</h2>
+              <p>The main Highland day: Loch Lomond, Tyndrum, Rannoch Moor, Buachaille Etive Mòr, Glen Etive, the Three Sisters and a final sweep around Loch Leven.</p>
+              <div class="day-kpis">
+                <span class="day-kpi">Leave 07:00–07:30</span>
+                <span class="day-kpi">Full-day route</span>
+                <span class="day-kpi">Glen Etive optional full run</span>
+                <span class="day-kpi">Kinlochleven night</span>
+              </div>
+            </div>
+          </header>
+          <div class="day-layout">
+            <div class="day-main">
+              <span class="eyebrow">Driving sequence</span>
+              <h3>The cinematic day, without rushing it.</h3>
+              <table class="time-table">
+                <thead><tr><th>Time</th><th>Plan</th><th>Photo discipline</th></tr></thead>
+                <tbody>
+                  <tr><td>07:00–07:30</td><td>Leave Moffat via M74, Glasgow’s western side and A82.</td><td>Save the camera energy for north of Loch Lomond.</td></tr>
+                  <tr><td>09:15–10:00</td><td>Short Loch Lomond coffee stop around Luss/Tarbet if parking is easy.</td><td>One shoreline frame, then move.</td></tr>
+                  <tr><td>11:00–11:30</td><td>Tyndrum / Green Welly fuel and facilities.</td><td>Top up before the slower Highland section.</td></tr>
+                  <tr><td>12:00–13:00</td><td>Rannoch Moor and Buachaille Etive Mòr lay-bys.</td><td>Use designated lay-bys only.</td></tr>
+                  <tr><td>13:00–15:00</td><td>Glen Etive out-and-back.</td><td>Full run only if the weather and pace support it; turning early is valid.</td></tr>
+                  <tr><td>15:15–16:30</td><td>Three Sisters, Glencoe village and a late lunch/coffee.</td><td>Cloud and drizzle can improve the photographs.</td></tr>
+                  <tr><td>16:45–18:00</td><td>B863 around Loch Leven to Kinlochleven.</td><td>Single-track etiquette; never occupy passing places.</td></tr>
+                </tbody>
+              </table>
+
+              <div class="day-image-strip">
+                <figure><img src="assets/images/buachaille.webp" alt="Buachaille Etive Mòr beside the A82"><figcaption>Buachaille — the Highland gateway</figcaption></figure>
+                <figure><img src="assets/images/kinlochleven.webp" alt="Kinlochleven and Loch Leven"><figcaption>Kinlochleven — Thursday’s finish</figcaption></figure>
+              </div>
+
+              <div class="route-note">
+                <strong>Current trip-window roadworks.</strong>
+                The live Traffic Scotland snapshot shows temporary controls on sections of the A82 around Tyndrum, Kingshouse/Glencoe and Ballachulish. Carry timing slack and re-check before leaving Moffat.
+              </div>
+              <div class="route-note route-note--warning">
+                <strong>Bad-weather edit.</strong>
+                Shorten or skip the complete Glen Etive run, keep the strongest Glencoe viewpoints and reach Kinlochleven earlier. Do not add Fort William simply to fill time.
+              </div>
+
+              <div class="button-row">
+                <a class="button button--filled" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/Moffat,+UK/Luss,+UK/Tyndrum,+UK/Glen+Etive/Three+Sisters+Viewpoint/Kinlochleven,+UK"><svg class="icon"><use href="#i-map"/></svg>Open full Thursday route</a>
+                <a class="button button--tonal" target="_blank" rel="noopener" href="https://www.traffic.gov.scot/traffic-information/planned-roadworks">Live A82 roadworks</a>
+              </div>
+            </div>
+            <aside class="day-sidebar">
+              <section class="mini-card">
+                <span class="eyebrow">Confirmed choice</span>
+                <h3>Kinlochleven</h3>
+                <p class="muted">More atmospheric than Fort William and perfectly placed to start Friday back through Glencoe.</p>
+              </section>
+              <section class="mini-card">
+                <span class="eyebrow">Practical fallback</span>
+                <h3>Fort William</h3>
+                <p class="muted">Use only if the Kinlochleven room fails, parking is unsuitable or check-in is impossible.</p>
+              </section>
+              <section class="mini-card">
+                <span class="eyebrow">Thursday night</span>
+                <h3>Fuel before parking</h3>
+                <p class="muted">Friday starts early. Sort fuel, food, chargers and camera batteries before you switch off.</p>
+              </section>
+            </aside>
+          </div>
+        </article>
+      </div>
+    </section>
+
 
     <section class="section" id="friday">
       <div class="shell">
@@ -616,7 +949,7 @@
               <div class="card__body">
                 <span class="eyebrow">Edinburgh parking</span>
                 <h3>Ingliston for this version</h3>
-                <p class="muted">It is west of the city, free, tram-served and open until 02:00. You are leaving the same evening, so its no-overnight rule is not a problem. Use Hermiston if Ingliston is event-full or your timing becomes uncertain.</p>
+                <p class="muted">It is west of the city, free and tram-served; the site operates 04:00–02:00 and strictly prohibits overnight parking. You are leaving that evening, so it fits. Use Hermiston if Ingliston is event-full or the schedule becomes uncertain.</p>
                 <div class="button-row">
                   <a class="button button--tonal" target="_blank" rel="noopener" href="https://www.edinburgh.gov.uk/directory-record/1114132/ingliston-park-and-ride">Ingliston details</a>
                   <a class="button button--text" target="_blank" rel="noopener" href="https://www.edinburgh.gov.uk/directory-record/1114131/hermiston-park-and-ride">Hermiston fallback</a>
@@ -627,6 +960,81 @@
         </div>
       </div>
     </section>
+
+
+    <section class="section" id="saturday">
+      <div class="shell">
+        <article class="day-chapter">
+          <header class="day-cover">
+            <img src="assets/images/wetherby.webp" alt="Wetherby motorway services">
+            <div class="day-cover__content">
+              <span class="day-number">Friday night + Day 4 · Saturday 25 July</span>
+              <h2>Edinburgh → Wetherby → East London</h2>
+              <p>The final leg is designed around sleep, not continuous overnight driving. Edinburgh ends the sightseeing; Wetherby resets the drivers; Saturday morning completes the journey.</p>
+              <div class="day-kpis">
+                <span class="day-kpi">Leave Edinburgh 18:30–19:00</span>
+                <span class="day-kpi">A1 / A1(M)</span>
+                <span class="day-kpi">5–6 hours stopped</span>
+                <span class="day-kpi">London ≈08:30–10:00</span>
+              </div>
+            </div>
+          </header>
+          <div class="day-layout">
+            <div class="day-main">
+              <span class="eyebrow">Night-run sequence</span>
+              <h3>A controlled journey in two separate drives.</h3>
+              <table class="time-table">
+                <thead><tr><th>Time</th><th>Plan</th><th>Rule</th></tr></thead>
+                <tbody>
+                  <tr><td>18:30–19:00 Fri</td><td>Leave Ingliston/Hermiston via A720 → A1 south.</td><td>Check National Highways closures before moving.</td></tr>
+                  <tr><td>≈21:00</td><td>Washington-area fuel, food and driver change.</td><td>Take 15–20 minutes even if both feel fine.</td></tr>
+                  <tr><td>≈22:30</td><td>Arrive at Moto Wetherby and pay the 2–24 hour car-parking tariff.</td><td>Keep the payment confirmation.</td></tr>
+                  <tr><td>22:45–04:30</td><td>Engine off, doors locked, slight ventilation, eye masks and blankets.</td><td>This is planned sleep—not a quick nap.</td></tr>
+                  <tr><td>04:30–05:00 Sat</td><td>Continue only if the next driver is genuinely alert.</td><td>If groggy, sleep longer. Arrival time does not matter.</td></tr>
+                  <tr><td>≈06:45</td><td>One additional break around Peterborough/Stamford/Baldock depending on live routing.</td><td>Swap drivers again.</td></tr>
+                  <tr><td>≈08:30–10:00</td><td>Reach East London, unload and complete the rental return.</td><td>Photograph fuel gauge, mileage and the car again.</td></tr>
+                </tbody>
+              </table>
+
+              <div class="route-note route-note--warning">
+                <strong>Absolute rule.</strong>
+                If neither of you sleeps properly in the car, do not leave at 04:30. Continue resting, buy a nearby room if one opens, or accept a later return.
+              </div>
+
+              <div class="button-row">
+                <a class="button button--filled" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/Edinburgh,+UK/Wetherby+Services,+A1(M)"><svg class="icon"><use href="#i-map"/></svg>Edinburgh → Wetherby</a>
+                <a class="button button--tonal" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/Wetherby+Services,+A1(M)/East+London,+London">Wetherby → East London</a>
+                <a class="button button--text" target="_blank" rel="noopener" href="https://nationalhighways.co.uk/travel-updates/road-closure-report/">Night closures</a>
+              </div>
+            </div>
+            <aside class="day-sidebar">
+              <section class="mini-card">
+                <span class="eyebrow">Parking</span>
+                <h3>Wetherby Services</h3>
+                <p class="muted">The first two hours are free; pay the posted longer-stay tariff immediately on arrival and keep proof.</p>
+              </section>
+              <section class="mini-card">
+                <span class="eyebrow">Sleep kit</span>
+                <h3>Ready, not buried</h3>
+                <ul>
+                  <li>Travel pillows</li>
+                  <li>Eye masks</li>
+                  <li>Light blankets</li>
+                  <li>Water and dry snacks</li>
+                  <li>Fresh layer for the morning</li>
+                </ul>
+              </section>
+              <section class="mini-card">
+                <span class="eyebrow">Closure fallback</span>
+                <h3>M8 → M74 → M6</h3>
+                <p class="muted">Only use the western motorway route if live closures make the A1 corridor materially worse. Pick a paid service-area sleep stop on that route.</p>
+              </section>
+            </aside>
+          </div>
+        </article>
+      </div>
+    </section>
+
 
     <section class="section">
       <div class="shell">
@@ -705,14 +1113,14 @@
   </main>
 
   <div class="sticky-actions" aria-label="Quick actions">
-    <a class="button button--filled" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/Kinlochleven,+UK/Glencoe,+UK/Tyndrum,+UK/Falls+of+Dochart,+Killin/Kenmore,+UK"><svg class="icon"><use href="#i-map"/></svg><span>Friday map</span></a>
+    <a class="button button--filled" href="#wednesday"><svg class="icon"><use href="#i-route"/></svg><span>Full itinerary</span></a>
     <button class="button button--tonal" onclick="window.print()"><svg class="icon"><use href="#i-print"/></svg><span>Print</span></button>
   </div>
 
   <footer>
     <div class="shell">
-      <span class="eyebrow" style="color:#f0c982">Final road book · v2</span>
-      <h2 style="color:white;max-width:850px">Built for two mates who would rather remember the road than tick off a route.</h2>
+      <span class="eyebrow" style="color:#f0c982">Final road book · v3 · complete itinerary</span>
+      <h2 style="color:white;max-width:850px">Built for two mates: four complete days, one signature road and no missing chapters.</h2>
       <p>Interface inspired by Material 3’s token and component approach, re-themed in Highland moss, stone, mist and whisky. It is not affiliated with Google or Top Gear.</p>
       <p class="micro">
         Photo credits: Glen Etive — Dowfs, CC BY 4.0; Kinlochleven — Peter S, CC BY-SA 2.0; Edinburgh — Glynn Jones, CC BY-SA 3.0; Moffat — Walter Baxter, CC BY-SA 2.0; Devil’s Beef Tub — David Neale, CC BY-SA 2.0; Buachaille Etive Mòr — Spike, Creative Commons; Wetherby — Mtaylor848, CC BY-SA 3.0/GFDL; Falls of Dochart — Simon Burchell, CC BY-SA 4.0; Ben Lawers from Loch Tay and Forth Bridge — Kim Traynor, CC BY-SA 4.0; Glen Quaich panorama — Ronnie Fleming, CC BY 2.0. Images retain their original licences.
